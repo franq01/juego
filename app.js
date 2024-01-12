@@ -49,12 +49,34 @@ snake.push(
             item.y = item.yNext;
             xNext = snake[index -1].x;
             yNext = snake[index - 1].y;
+            item.y = posY;
         }
     })
  }
+ const food ={
+    x: 0,
+    y: 0,
+    pinta: function(){
+        ctx.fillText("🍌", this.x * 20, this.y * 20);
+    },
+
+    random: function(){
+        this.x = Math.floor(Math.random() * 30);
+        this.y = Math.ceil(Math.random()*20);
+
+    }
+}
+let posX = 0;
+let posY = 1;
+
+let direction = 1;
+
+food.random();
 setInterval(() => {
     ctx.fillRect(0, 0, 600, 400);
+    food.pinta();
    snake.forEach(item=>item.pinta())
+
 
     if(direction ===1 ) posX++;
     else if(direction === 2) posY++;
