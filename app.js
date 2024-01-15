@@ -6,7 +6,7 @@ let posY = 1;
 
 let direction = 1;
 function init(){
-     posX = 0;
+     posX = 2;
      posY = 1;
      direction = 1;
      
