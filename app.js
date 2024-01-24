@@ -102,6 +102,9 @@ setInterval(() => {
     snake.forEach(item => item.pinta());
 
     checkEat();
+    if (gameOver()){
+        alert('has perdido')
+    }
 
     if(direction === 1)   posX++;
     else if (direction === 2)posY++;
